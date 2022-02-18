@@ -25,21 +25,15 @@ app.post("/students", (req, res) => {
 });
 */
 
-
-app.post("/students", async(req,res) => {
-    
-      try{
-          const user = new Student(req.body);
-          const createUser = await user.save();
-          res.status(201).send(createUser);
-
-      }
-      catch(e){ res.status(400).send(e);
-      };
-    
-  });
-
-
+app.post("/students", async (req, res) => {
+  try {
+    const user = new Student(req.body);
+    const createUser = await user.save();
+    res.status(201).send(createUser);
+  } catch (e) {
+    res.status(400).send(e);
+  }
+});
 
 //You Do not need express.json() and express.urlencoded()
 //for GET requests or DELETE Requests. We only need it for post and put req.
@@ -52,41 +46,60 @@ app.post("/students", async(req,res) => {
 //   res.send("hello World from Abhay ");
 //})
 
-
-
-
 //read the data of registered students:
 
-app.get("/students", async(req,res) => {
-    
-    try{
-        const studentsData = await Student.find();
-        res.send(studentsData);
-
-    }
-    catch(e){ res.send(e);
-    };
-  
+app.get("/students", async (req, res) => {
+  try {
+    const studentsData = await Student.find();
+    res.send(studentsData);
+  } catch (e) {
+    res.send(e);
+  }
 });
-app.get("/students/:id", async(req,res) => {
-    try {
-        const _id = req.params.id;
-        const studentData = await Student.findById(_id);
-        if(!studentData){
-            return res.status(404).send();
-        }else{
-        
-        res.send(studentData);
-        }
-        
-    } catch (e) {res.status(500).send(e);
-        
+app.get("/students/:id", async (req, res) => {
+  try {
+    const _id = req.params.id;
+    const studentData = await Student.findById(_id);
+    if (!studentData) {
+      return res.status(404).send();
+    } else {
+      res.send(studentData);
     }
-    
-  
+  } catch (e) {
+    res.status(500).send(e);
+  }
 });
 
+//update the students by its id:
+
+app.patch("/students/:id",async(req,res)=>{
+  try{
+      const _id =req.params.id;
+      const updateStudents = await Student.findByIdAndUpdate(_id,req.body,{
+        new:true
+      });
+
+      res.send(updateStudents);
+  }catch(e){
+    res.status(404).send(e);
+;  }
+})
+
+//delete the student by id:
+
+app.delete("/students/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const deleteStudent = await Student.findByIdAndDelete(req.params.id);
+    if (!req.params.id) {
+      return res.status(404).send();
+    }
+    res.send(deleteStudent);
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
 
 app.listen(port, () => {
-    console.log(`connection is running on PORT ${port}`);
-  });
+  console.log(`connection is running on PORT ${port}`);
+});
