@@ -24,6 +24,7 @@ app.post("/students", (req, res) => {
   
 });
 */
+//create a student by async,await :
 
 app.post("/students", async (req, res) => {
   try {
@@ -42,9 +43,6 @@ app.post("/students", async (req, res) => {
 // a JSON object.This method is called as a middleware in your apllication  using
 // the code :  app.use(express.json());
 
-//app.get("/",(req,res)=>{
-//   res.send("hello World from Abhay ");
-//})
 
 //read the data of registered students:
 
@@ -56,6 +54,9 @@ app.get("/students", async (req, res) => {
     res.send(e);
   }
 });
+
+//read the data of registered student (single student):
+
 app.get("/students/:id", async (req, res) => {
   try {
     const _id = req.params.id;
@@ -85,7 +86,7 @@ app.patch("/students/:id",async(req,res)=>{
 ;  }
 })
 
-//delete the student by id:
+//delete the student by  its id:
 
 app.delete("/students/:id", async (req, res) => {
   try {
