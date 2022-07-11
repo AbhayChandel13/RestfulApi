@@ -87,7 +87,7 @@ router.post("/students", async (req, res) => {
         res.send(updateStudents);
     }catch(e){
       res.status(404).send(e);
-  ;  }
+    }
   })
   
   //delete the student by  its id:
