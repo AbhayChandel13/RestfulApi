@@ -73,7 +73,7 @@ router.post("/students", async (req, res) => {
     } catch (e) {
       res.status(500).send(e);
     }
-  });
+  }); 
   
   //update the students by its id:
   
