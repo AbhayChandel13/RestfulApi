@@ -28,7 +28,7 @@ router.post("/students", (req, res) => {
 
 */
 
-//create a student by async,await :
+//Create a student by async,await :
 
 router.post("/students", async (req, res) => {
     try {
