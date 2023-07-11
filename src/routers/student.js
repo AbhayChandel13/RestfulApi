@@ -49,6 +49,7 @@ router.post("/students", async (req, res) => {
   // a JSON object.This method is called as a middleware in your apllication  using
   // the code : app.use(express.json());
   //comment 1 added 
+  //activity 2  
   
   //Read the data of registered Students:
   
