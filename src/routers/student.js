@@ -92,9 +92,7 @@ router.post("/students", async (req, res) => {
   })
   
   //delete the student by  its id:
-  //comment 
-  //comment 2
-  //comment 3
+
   router.delete("/students/:id", async (req, res) => {
     try {
       const id = req.params.id;
