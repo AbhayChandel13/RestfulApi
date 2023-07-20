@@ -92,6 +92,7 @@ router.post("/students", async (req, res) => {
   })
   
   //comments 1
+  //comment 2
   //delete the student by  its id:
 
   router.delete("/students/:id", async (req, res) => {
