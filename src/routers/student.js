@@ -50,9 +50,6 @@ router.post("/students", async (req, res) => {
   // the code : app.use(express.json());
   
   //Read the data of registered Students:
-//comment 1 
-//comment 2
-//comment 3 
   
   router.get("/students", async (req, res) => {
     try {
