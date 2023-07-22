@@ -52,6 +52,7 @@ router.post("/students", async (req, res) => {
   //Read the data of registered Students:
   //comment 1 
   //comment 1 
+    //comment 3
   router.get("/students", async (req, res) => {
     try {
       const studentsData = await Student.find();
