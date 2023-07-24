@@ -8,7 +8,7 @@ const Student = require("../models/students")
 //     res.send("hello Wahtsup guys");
 //   })
 
-
+//comment added 
 //create a student:
 /*
 router.post("/students", (req, res) => {
