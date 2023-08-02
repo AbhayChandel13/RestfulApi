@@ -41,9 +41,7 @@ router.post("/students", async (req, res) => {
       res.status(400).send(e);
     }
   });
-  
-//You Do not need express.json() and express.urlencoded()
-  //for GET requests or DELETE Requests. We only need it for 
+ 
 
   //You Do not need express.json() and express.urlencoded()
   //for GET requests or DELETE Requests. We only need it for post and put req.
