@@ -42,8 +42,6 @@ router.post("/students", async (req, res) => {
     }
   });
  
-  //comment 
- 
 
 
   //You Do not need express.json() and express.urlencoded()
