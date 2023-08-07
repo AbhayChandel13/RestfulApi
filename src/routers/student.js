@@ -63,8 +63,8 @@ router.post("/students", async (req, res) => {
   });
   
   //comment added just for the commit/activity purpose
+  //comment 2 
 
-  
   //read the data of registered student (single student):
   
   router.get("/students/:id", async (req, res) => {
