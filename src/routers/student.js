@@ -63,7 +63,7 @@ router.post("/students", async (req, res) => {
   });
   
 //comment
-//cooment
+
 
   //read the data of registered student (single student):
   
