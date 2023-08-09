@@ -61,12 +61,9 @@ router.post("/students", async (req, res) => {
       res.send(e);
     }
   });
+
+
   
-//comment 
-//comment 
-
-
-
   //read the data of registered student (single student):
   
   router.get("/students/:id", async (req, res) => {
